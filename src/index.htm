@@ -12,16 +12,33 @@
 
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
-  <title>Hello app</title>
+  <title>Products</title>
 </head>
 
+<style>
+  body {
+    background-color: lightblue;
+  }
+</style>
+
 <body>
-  <h1>Hello</h1>
-  <div id="app">
-    <input v-model="name" placeholder="Name">
-    <button v-on:click="sayHello()" class="btn btn-primary">Say hello</button>
-    <div>{{ greeting }}</div>
+  <div class="jumbotron jumbotron-fluid" style="color: white; background-color: rgb(28, 16, 190);">
+    <div class="container">
+      <h1><strong>eKunder</strong></h1>
+      <p>Skabning af vare og serienummer</p>
+    </div>
   </div>
+  <div id="app">
+    <h2 style="margin: 25px 20px 25px 390px;">serienummer til varen</h2>
+    <input v-model.number="addData.productNr" placeholder="varenummer" type="number" />
+    <input v-model.number="addData.customerNr" placeholder="kundenummer" type="number" />
+    <input v-model.number="addData.invoiceNr" placeholder="fakturanummer" type="number" />
+    <input v-model="addData.serialNr" placeholder="serienummer" type="text" />
+    <button v-on:click="addProduct()" class="btn btn-success">Skab</button>
+    <div>{{addMessage}}</div>
+  </div>
+
+  <Button onclick="document.location= 'https://ecustomer.azurewebsites.net/'" class="btn btn-success">Info</button>
 
   <script src="bundle.js"></script>
 </body>
