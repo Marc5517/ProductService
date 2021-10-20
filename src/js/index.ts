@@ -24,13 +24,13 @@ new Vue({
         addData: { productNr: "", customerNr: "", invoiceNr: "", serialNr: ""},
         addMessage: "",
     },
-    ///Når data fra en anden HTML-side bliver transporteret til dette program, så bliver kun det der nævnes nedenunder tilføjet til et felt på HTML-siden.
+    // Når data fra en anden HTML-side bliver transporteret til dette program, så bliver kun det der nævnes nedenunder tilføjet til et felt på HTML-siden.
     created() {
         let params = new URLSearchParams(location.search);
         this.addData.customerNr = params.get('customerNr')
     },
     methods: {
-        ///Skaber en vare til databasen
+        // Skaber en vare til databasen ved at indtaste værdierne til varen og brug af URL.
         addProduct() {
             axios.post<IProduct>(baseUrl, this.addData)
                 .then((response: AxiosResponse) => {
