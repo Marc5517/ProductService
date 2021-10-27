@@ -34,10 +34,12 @@
     <input v-model.number="addData.customerNr" placeholder="kundenummer" type="number" />
     <input v-model.number="addData.invoiceNr" placeholder="fakturanummer" type="number" />
     <input v-model="addData.serialNr" placeholder="serienummer" type="text" />
+    <!--2021-10-27 Knappen her skaber et produkt-->
     <button v-on:click="addProduct()" class="btn btn-success">Skab</button>
     <div>{{addMessage}}</div>
   </div>
 
+  <!--2021-10-27 Knappen her fører til forsiden-->
   <Button onclick="document.location= 'https://ecustomer.azurewebsites.net/'" class="btn btn-success">Info</button>
 
   <script src="bundle.js"></script>
