@@ -13,6 +13,7 @@ interface IProduct {
 
 // use https (http secure).
 // http (non secure) will make the app complain about mixed content when running the app from Azure
+// 2021-10-27: Denne her skaber forbindelse til URL'en til restapi'en med databasen til produkterne
 let baseUrl: string = "https://customerrestservice.azurewebsites.net/api/Products"
 
 new Vue({
